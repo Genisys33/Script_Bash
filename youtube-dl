@@ -1,0 +1,22 @@
+#!/bin/bash
+rep=youtube_script
+
+#Dispo quand pour une bière
+#sudo dnf install youtube-dl ffmpeg -y
+
+#Il est temps de changer mon grand
+#sudo apt install youtube-dl ffmpeg -y
+
+#btw i use arch
+#sudo pacman -S youtube-dl ffmpeg
+
+if [ `echo ${PWD##*/}` = "$rep" ] ;  then 
+	echo "Vous êtes déjà dans $rep"
+else
+	mkdir youtube_script
+	cd youtube_script
+fi;
+
+echo -n "Le liens de la vidéo : "; read link
+youtube-dl $link -x --audio-format mp3
+ls --color=auto
