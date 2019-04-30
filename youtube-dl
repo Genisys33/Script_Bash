@@ -13,8 +13,8 @@ rep=youtube_script
 if [ `echo ${PWD##*/}` = "$rep" ] ;  then 
 	echo "Vous êtes déjà dans $rep"
 else
-	mkdir youtube_script
-	cd youtube_script
+	mkdir $rep
+	cd $rep
 fi;
 
 echo -n "Le liens de la vidéo : "; read link
