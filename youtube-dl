@@ -20,5 +20,5 @@ else
 fi;
 
 read -p 'Liens URL de la vidéo : ' link
-youtube-dl $link -x --audio-format mp3
+youtube-dl $link -x --output "%(title)s.%(ext)s" --audio-format mp3
 ls --color=auto
