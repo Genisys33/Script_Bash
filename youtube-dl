@@ -1,5 +1,5 @@
 #!/bin/bash
-rep=youtube_script
+rep=Musique
 
 #Dispo quand pour une bière
 #sudo dnf install youtube-dl ffmpeg -y
@@ -12,11 +12,11 @@ rep=youtube_script
 
 if [ `echo ${PWD##*/}` = "$rep" ] ;  then 
 	echo "Vous êtes déjà dans $rep"
-elif [ -e $rep  ] ; then
-	cd $rep
+elif [ -e ~/$rep  ] ; then
+	cd ~/$rep
 else
-	mkdir $rep
-	cd $rep
+	mkdir ̃ /$rep
+	cd ~/$rep
 fi;
 
 read -p 'Liens URL de la vidéo : ' link
