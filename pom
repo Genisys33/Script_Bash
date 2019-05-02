@@ -1,0 +1,33 @@
+#!/bin/bash
+
+lim=1000
+tentative=0
+nbr=0
+ok=0
+ran=$(( $$ % $lim ))
+
+while [ $ok -ne 1 ] ; do
+
+	read -p 'Indiquez un nombre : ' nbr
+	
+	if [ $nbr = $ran ] ; then
+		((ok+=1))	
+	
+	elif [[ $nbr =~ ^[0-9]+$ ]] ; then
+	
+		if [ $nbr -lt $ran ] ; then
+			echo "+"
+	
+		elif [ $nbr -gt $ran ] ; then
+			echo "-"
+		fi
+		((tentative+=1))
+	else
+
+		echo "Seulement des chiffres"
+		((tentative+=1))
+
+	fi
+done
+
+echo "Vous avez mis $tentative coups à trouver le bon nombre"
