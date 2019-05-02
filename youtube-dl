@@ -12,11 +12,13 @@ rep=youtube_script
 
 if [ `echo ${PWD##*/}` = "$rep" ] ;  then 
 	echo "Vous êtes déjà dans $rep"
+elif [ -e $rep  ] ; then
+	cd $rep
 else
 	mkdir $rep
 	cd $rep
 fi;
 
-echo -n "Le liens de la vidéo : "; read link
+read -p 'Liens URL de la vidéo : ' link
 youtube-dl $link -x --audio-format mp3
 ls --color=auto
