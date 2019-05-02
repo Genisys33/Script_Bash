@@ -31,3 +31,4 @@ while [ $ok -ne 1 ] ; do
 done
 
 echo "Vous avez mis $tentative coups à trouver le bon nombre"
+
