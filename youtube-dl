@@ -2,7 +2,7 @@
 rep=Musique
 
 #Dispo quand pour une bière
-#sudo dnf install youtube-dl ffmpeg -y
+#sudo dnf install youtube-dl -y
 
 #Il est temps de changer mon grand
 #sudo apt install youtube-dl ffmpeg -y
