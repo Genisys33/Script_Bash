@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#Il faut mettre ci-dessous le répertoire que l'on veut sauvegarder
+saveall=~/Téléchargements/Wiki/
+
+if [ `date "+%u"` -ne 5  ] ; then
+	cd $HOME
+	tar cf backup_all.tar $saveall
+	echo "Nous sommes vendredi la sauvegarde du répertoire courant hebdomadaire est effectué."
+
+else 
+	cd $HOME
+	tar uf backup_all.tar $saveall
+	echo "Sauvegarde journalière effectué"
+fi;
+
+echo -e "Dans quel répertoire ce trouve votre fichier ?\nVeuillez rentrez le chemin à partir de $HOME :"; read rep
+cd ~/$rep
+pwd 
+
+echo -e "Quel est votre fichier/dossier que vous voulez sauvegarder :"
+ls --color=auto
+
+read folder
+tar cvf backup__$folder.tar $folder
