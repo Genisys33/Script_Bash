@@ -1,5 +1,6 @@
 #!/bin/bash
 rep=Musique
+rep2=Music
 
 #Dispo quand pour une bière
 #sudo dnf install youtube-dl -y
@@ -10,10 +11,10 @@ rep=Musique
 #btw i use arch
 #sudo pacman -S youtube-dl ffmpeg
 
-if [ `echo ${PWD##*/}` = "$rep" ] ;  then 
+if [ `echo ${PWD##*/}` = "$rep" ] || [ `echo ${PWD##*/}` =  "$rep2" ] ;  then 
 	echo "Vous êtes déjà dans $rep"
-elif [ -e ~/$rep  ] ; then
-	cd ~/$rep
+elif [ -e ~/$rep ] || [ -e ~/$rep2 ] ; then
+	cd ~/$rep || cd ~/$rep2
 else
 	mkdir ̃ /$rep
 	cd ~/$rep
