@@ -8,7 +8,8 @@ Si cela fonction avec un intervalle de 0 à 10 cela fonctionne avec une de 0 à 
 ## [Un outils de sauvegarde](https://github.com/Genisys33/Script_Bash/blob/master/backup)
 
 Pour le moment je ne l'ai qu'avec l'argument update de la fonction tar je suis actuellement en recherche d'une autre solution sans celui-ci.
-  
+   `Fait avec Florian Léveil`
+
 ## [youtube-dl](https://github.com/Genisys33/Script_Bash/blob/master/youtube-dl)
 
 Le plus compliqué dans youtube-dl à était de comprendre comment faire pour n'afficher que le répertoire courant et non le chemin absolu avec la commande `pwd`.
