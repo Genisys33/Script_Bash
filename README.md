@@ -7,8 +7,8 @@ Si cela fonction avec un intervalle de 0 à 10 cela fonctionne avec une de 0 à 
 
 ## [Un outils de sauvegarde](https://github.com/Genisys33/Script_Bash/blob/master/backup)
 
-Pour le moment je ne l'ai qu'avec l'argument update de la fonction tar je suis actuellement en recherche d'une autre solution sans celui-ci.
-   `Fait avec Florian Léveil`
+Voici le script de la sauvegarde pour le fonctionnement il suffit de modifier le chemin  de sauvegarde du dossier dans le script qui est à la ligne 4. Notre plus grosse difficulté a été de devoir faire l'update du tar sans la commande update mais aussi de détecter l'emplacement des dossiers (Qui pour le moment n'est pas toujours pas résolu). 
+Avec la participation de [Florian Léveil](https://github.com/FlorianLeveil)
 
 ## [youtube-dl](https://github.com/Genisys33/Script_Bash/blob/master/youtube-dl)
 
