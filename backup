@@ -49,7 +49,6 @@ cd ~/$rep && pwd
 echo -e "Quel est votre fichier/dossier que vous voulez sauvegarder :"
 ls --color=auto
 read folder
-#folder=$(("$folder"))
 
 while [ $ko -ne 1 ] ; do
 	if [[ `ls | find $folder` = `find $folder` ]] ; then
