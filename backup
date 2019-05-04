@@ -10,10 +10,10 @@ if [ `date "+%u"` = 5  ] ; then
 	echo "Nous sommes vendredi la sauvegarde du répertoire courant hebdomadaire est effectué."
 
 else 
-	cd $saveall
+	cd $HOME
 	mkdir .backup_temp 
-	tar -xvf ~/backup_all.tar -C .backup_temp
-	diff -q backup_all.tar .backup_temp
+	tar -xf ~/backup_*.tar -C .backup_temp
+	diff -q $saveall .backup_temp
 	echo "Sauvegarde journalière effectué"
 	rm -rf .backup_temp
 fi;
