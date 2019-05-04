@@ -6,7 +6,7 @@ saveall=~/Téléchargements/Wiki/
 if [ `date "+%u"` = 5  ] ; then
 	cd $saveall
 	tar cf backup_`date "+%Y-%m-%d"`.tar *
-	mv backup_`date "+%Y-%m-%d"`.tar $HOMEbackup_`date "+%Y-%m-%d"`.tar
+	mv backup_`date "+%Y-%m-%d"`.tar $HOME
 	echo "Nous sommes vendredi la sauvegarde du répertoire courant hebdomadaire est effectué."
 
 else 
