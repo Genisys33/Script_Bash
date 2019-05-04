@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Il faut mettre ci-dessous le répertoire que l'on veut sauvegarder
-saveall=~/Téléchargements/Wiki/
+saveall='Tonrepdesauvegardeaveccheminabsolu'
 
 if [ `date "+%u"` = 5  ] ; then
 	cd $HOME
