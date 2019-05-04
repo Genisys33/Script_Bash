@@ -1,8 +1,10 @@
 #!/bin/bash
 
 #Il faut mettre ci-dessous le répertoire que l'on veut sauvegarder
-saveall=~/Téléchargement/Wiki
+saveall=~/Téléchargements/Wiki/
 dat=backup_`date "+%Y-%m-%d"`.tar
+temprep=''
+ok=0
 
 if [ `date "+%u"` = 5  ] ; then
 	if [ "`ls $HOME | grep $dat`" != "$dat" ] ; then 
@@ -29,9 +31,19 @@ else
 	fi;
 fi;
 
+cd $HOME
 echo -e "Dans quel répertoire ce trouve votre fichier ?\nVeuillez rentrez le chemin à partir de $HOME :"; read rep
-cd ~/$rep
-pwd 
+
+while [ $ok -ne 1 ] ; do
+	if [ "`cd ~/$rep && pwd`" = "$HOME/$rep" ] ; then 
+		temprep=$rep
+		((ok+=1))
+	else
+		echo "Ce dossier n'existe pas"
+		read rep
+	fi
+done 
+cd ~/$rep && pwd 
 
 echo -e "Quel est votre fichier/dossier que vous voulez sauvegarder :"
 ls --color=auto
