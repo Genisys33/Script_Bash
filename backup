@@ -2,13 +2,18 @@
 
 #Il faut mettre ci-dessous le répertoire que l'on veut sauvegarder
 saveall=~/Téléchargements/Wiki/
+dat=backup_`date "+%Y-%m-%d"`.tar
 
 if [ `date "+%u"` = 5  ] ; then
-	cd $saveall
-	tar cf backup_`date "+%Y-%m-%d"`.tar *
-	mv backup_`date "+%Y-%m-%d"`.tar $HOME
-	echo "Nous sommes vendredi la sauvegarde du répertoire courant hebdomadaire est effectué."
+	if [ "`ls $HOME | grep $dat`" != "$dat" ] ; then 
+		cd $saveall
+		tar cf backup_`date "+%Y-%m-%d"`.tar *
+		mv backup_`date "+%Y-%m-%d"`.tar $HOME
+		echo "Nous sommes vendredi la sauvegarde du répertoire courant hebdomadaire est effectué."
 
+	else
+		echo "Backup déjà à jour"
+	fi
 else 
 	cd $HOME
 	mkdir .backup_temp 
