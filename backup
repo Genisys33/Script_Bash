@@ -34,7 +34,7 @@ fi;
 cd $HOME
 echo -e "Dans quel répertoire ce trouve votre fichier ?\nVeuillez rentrez le chemin à partir de $HOME :"; read rep
 
-while [ $ok -ne 1 ] ; do
+while [ $ok -ne 1 ] ; do
 	if [ "`cd ~/$rep && pwd`" = "$HOME/$rep" ] ; then 
 		temprep=$rep
 		((ok+=1))
