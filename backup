@@ -5,6 +5,7 @@ saveall=~/Téléchargements/Wiki/
 dat=backup_`date "+%Y-%m-%d"`.tar
 temprep=''
 ok=0
+ko=0
 
 if [ `date "+%u"` = 5  ] ; then
 	if [ "`ls $HOME | grep $dat`" != "$dat" ] ; then 
@@ -48,5 +49,16 @@ cd ~/$rep && pwd
 echo -e "Quel est votre fichier/dossier que vous voulez sauvegarder :"
 ls --color=auto
 read folder
+#folder=$(("$folder"))
 
-tar cvf backup__$folder.tar $folder
+while [ $ko -ne 1 ] ; do
+	if [[ `ls | find $folder` = `find $folder` ]] ; then
+		tar cvf backup_${PWD##*/}.tar $folder
+		((ko+=1))
+	else
+		echo "Ce(s) dossier(s)/fichier(s) n'existe pas"
+		read folder
+	fi
+done
+
+echo Sauvergarde effectué dans $HOME/$rep
