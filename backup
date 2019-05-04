@@ -1,16 +1,19 @@
 #!/bin/bash
 
 #Il faut mettre ci-dessous le répertoire que l'on veut sauvegarder
-saveall='Tonrepdesauvegardeaveccheminabsolu'
+saveall=~/Téléchargements/Wiki/
 
 if [ `date "+%u"` = 5  ] ; then
-	cd $HOME
-	tar cf backup_`date +%D`.tar $saveall
+	cd $saveall
+	tar cf backup_`date "+%Y-%m-%d"`.tar *
+	mv backup_`date "+%Y-%m-%d"`.tar $HOMEbackup_`date "+%Y-%m-%d"`.tar
 	echo "Nous sommes vendredi la sauvegarde du répertoire courant hebdomadaire est effectué."
 
 else 
-	cd $HOME
-	tar uf backup_all.tar $saveall
+	cd $saveall
+	mkdir .backup_temp 
+	tar -xvf ~/backup_all.tar -C .backup_temp
+	diff -q backup_all.tar .backup_temp
 	echo "Sauvegarde journalière effectué"
 fi;
 
