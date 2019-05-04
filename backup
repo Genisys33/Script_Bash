@@ -16,11 +16,8 @@ if [ `date "+%u"` = 5  ] ; then
 	fi
 else 
 	cd $HOME
-	mkdir .backup_temp 
-	tar -xf ~/backup_*.tar -C .backup_temp
-	diff -q $saveall .backup_temp
+	tar df backup_`date "+%Y-%m-%d"`.tar -C $saveall
 	echo "Sauvegarde journalière effectué"
-	rm -rf .backup_temp
 fi;
 
 echo -e "Dans quel répertoire ce trouve votre fichier ?\nVeuillez rentrez le chemin à partir de $HOME :"; read rep
