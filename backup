@@ -16,8 +16,17 @@ if [ `date "+%u"` = 5  ] ; then
 	fi
 else 
 	cd $HOME
-	tar df backup_`date "+%Y-%m-%d"`.tar -C $saveall
-	echo "Sauvegarde journalière effectué"
+	if [ "`ls | grep backup_jour.tar`" != "backup_jour.tar" ] ; then
+		cd $saveall
+		tar cf backup_jour.tar * && mv backup_jour.tar $HOME
+		echo "Première sauvegarde journalière effectué"
+	else
+		tar df backup_jour.tar -C $saveall
+		rm backup_jour.tar
+		cd $saveall
+                tar cf backup_jour.tar * && mv backup_jour.tar $HOME
+		echo "Sauvegarde journalière effectué"
+	fi;
 fi;
 
 echo -e "Dans quel répertoire ce trouve votre fichier ?\nVeuillez rentrez le chemin à partir de $HOME :"; read rep
