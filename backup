@@ -15,6 +15,7 @@ else
 	tar -xvf ~/backup_all.tar -C .backup_temp
 	diff -q backup_all.tar .backup_temp
 	echo "Sauvegarde journalière effectué"
+	rm -rf .backup_temp
 fi;
 
 echo -e "Dans quel répertoire ce trouve votre fichier ?\nVeuillez rentrez le chemin à partir de $HOME :"; read rep
