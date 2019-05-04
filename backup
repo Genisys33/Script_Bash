@@ -3,9 +3,9 @@
 #Il faut mettre ci-dessous le répertoire que l'on veut sauvegarder
 saveall=~/Téléchargements/Wiki/
 
-if [ `date "+%u"` -ne 5  ] ; then
+if [ `date "+%u"` = 5  ] ; then
 	cd $HOME
-	tar cf backup_all.tar $saveall
+	tar cf backup_`date +%D`.tar $saveall
 	echo "Nous sommes vendredi la sauvegarde du répertoire courant hebdomadaire est effectué."
 
 else 
