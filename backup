@@ -29,12 +29,12 @@ else
 	fi;
 fi;
 
-echo -e "Dans quel répertoire ce trouve votre fichier ?\nVeuillez rentrez le chemin à partir de $HOME :"; read rep
 cd ~/$rep
+echo -e "Dans quel répertoire ce trouve votre fichier ?\nVeuillez rentrez le chemin à partir de $HOME :"; read rep
 pwd 
 
 echo -e "Quel est votre fichier/dossier que vous voulez sauvegarder :"
 ls --color=auto
-
 read folder
+
 tar cvf backup__$folder.tar $folder
